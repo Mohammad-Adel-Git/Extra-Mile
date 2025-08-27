@@ -1,29 +1,22 @@
-﻿using Core.Entities;
-using Core.Specifications;
 using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using Core.Entities;
+using System;
+using System.Linq.Expressions;
 
-namespace Core.Interfaces
+namespace Core.Interfaces;
+
+public interface IGenericRepository<T> where T : BaseEntity
 {
-    public interface IGenericRepository <T> where T : BaseEntity
-    {
-        public Task<T?> GetByIdAsync(int id);
-        public Task<IReadOnlyList<T>> ListAllAsync();
-        public Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec);
-        public Task<T?> GetEntityWithSpec(ISpecification<T> spec);
-        public Task<IReadOnlyList<TResult>> ListAsync<TResult>(ISpecification<T, TResult> spec);
-        public Task<TResult?> GetEntityWithSpec<TResult>(ISpecification<T, TResult> spec);
-        public void Add(T entity);
-        public void Remove(T entity);
-
-        public Task<bool> SaveAllAsync();
-
-        public void Update(T entity);
-
-        public bool Exists(int id);
-        Task<int> CountAsync(ISpecification<T> spec);
-    }
+    Task<T?> GetByIdAsync(int id);
+    Task<IReadOnlyList<T>> ListAllAsync();
+    Task<T?> GetEntityWithSpec(ISpecification<T> spec);
+    Task<IReadOnlyList<T>> ListAsync(ISpecification<T> spec);
+    Task<TResult?> GetEntityWithSpec<TResult>(ISpecification<T, TResult> spec);
+    Task<IReadOnlyList<TResult>> ListAsync<TResult>(ISpecification<T, TResult> spec);
+    void Add(T entity);
+    void Update(T entity);
+    void Remove(T entity);
+    bool Exists(int id);
+    Task<int> CountAsync(ISpecification<T> spec);
+    public Task<decimal> SumAsync(Expression<Func<T, decimal>> selector);
 }
