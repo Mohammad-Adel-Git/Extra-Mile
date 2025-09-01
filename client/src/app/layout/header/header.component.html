@@ -27,15 +27,18 @@
         </a>
       }
       @if (accountService.isAdmin()) {
-        <a routerLink="/admin/dashboard" routerLinkActive="nav-active" class="nav-link">Admin</a>
+        <a routerLink="/admin/dashboard" routerLinkActive="nav-active" class="nav-link">Dashboard</a>
       }
       @if (accountService.isVendor()) {
-        <a routerLink="/vendor/dashboard" routerLinkActive="nav-active" class="nav-link">Vendor</a>
+        <a routerLink="/vendor/dashboard" routerLinkActive="nav-active" class="nav-link">Dashboard</a>
       }
     </nav>
 
     <!-- Right Section -->
         <div class="header-actions">
+      <button mat-stroked-button color="primary" (click)="openAskAI()" class="ask-ai-btn">
+        Ask AI ✨
+      </button>
       <button mat-icon-button (click)="toggleTheme()" class="theme-toggle-button" aria-label="Toggle theme">
         <mat-icon>{{ isDarkMode() ? 'light_mode' : 'dark_mode' }}</mat-icon>
       </button>

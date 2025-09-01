@@ -1,4 +1,6 @@
 import { Component, inject, ViewEncapsulation } from '@angular/core';
+import { MatDialog } from '@angular/material/dialog';
+import { ChatDialogComponent } from '../../shared/components/chat-dialog/chat-dialog.component';
 import { MatIcon } from "@angular/material/icon";
 import { MatButton } from "@angular/material/button";
 import { MatBadge } from "@angular/material/badge";
@@ -9,6 +11,7 @@ import { CartService } from '../../core/services/cart.service';
 import { AccountService } from '../../core/services/account.service';
 import { MatDivider } from '@angular/material/divider';
 import { MatMenuTrigger, MatMenu, MatMenuItem } from '@angular/material/menu';
+import { MatDialogModule } from '@angular/material/dialog';
 import { IsAdmin } from '../../shared/directives/is-admin';
 import { ThemeService } from '../../core/services/theme.service';
 import { DialogService } from '../../core/services/dialog.service';
@@ -29,6 +32,7 @@ import { CommonModule } from '@angular/common';
     MatMenu,
     MatDivider,
     MatMenuItem,
+    MatDialogModule,
     // IsAdmin,
     FormsModule,
     CommonModule
@@ -46,6 +50,7 @@ export class HeaderComponent {
   themeService = inject(ThemeService);
   dialogService = inject(DialogService);
   snackbar = inject(SnackbarService);
+  private dialog = inject(MatDialog);
 
   toggleTheme() {
     this.themeService.toggleTheme();
@@ -89,5 +94,16 @@ export class HeaderComponent {
 
   shouldHideHeader(): boolean {
     return this.isOnAuthPage();
+  }
+
+  openAskAI() {
+    this.dialog.open(ChatDialogComponent, {
+      width: '680px',
+      maxWidth: '95vw',
+      height: '80vh',
+      maxHeight: '90vh',
+      panelClass: 'chat-dialog-panel',
+      autoFocus: false
+    });
   }
 }

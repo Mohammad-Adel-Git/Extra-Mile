@@ -1,15 +1,16 @@
 using API.Middleware;
+using API.Services;
 using API.SignalR;
 using Core.Entities;
 using Core.Interfaces;
 using Infrastructure.Data;
 using Infrastructure.Services;
-using API.Services;
+using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
+using RAGChatbotApi.Services;
 using StackExchange.Redis;
 using System.Text.Json.Serialization;
-using Microsoft.AspNetCore.Http;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -40,6 +41,12 @@ builder.Services.AddSingleton<IConnectionMultiplexer>(config =>
 builder.Services.AddSingleton<ICartService, CartService>();
 builder.Services.AddSingleton<IResponseCacheService, ResponseCacheService>();
 
+// Chat Bot Services
+// Application services
+builder.Services.AddSingleton<EmbeddingService>();
+builder.Services.AddScoped<VectorStoreService>();
+builder.Services.AddSingleton<GeminiService>();
+builder.Services.AddSingleton<ChatMemoryService>();
 builder.Services.AddAuthorization();
 
 // Configure Identity to allow login with email
