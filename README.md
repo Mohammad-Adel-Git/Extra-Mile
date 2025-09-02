@@ -29,7 +29,7 @@ It is built with **.NET Core (API)** and **Angular (Frontend)**, featuring **Ide
 ## 🏗️ Backend Architecture
 
 The backend follows a **Clean Architecture / DDD-inspired structure** with separation of concerns:
-
+![Backend Architecture](docs/images/Arch.JPG)
 - **API Layer** (`API/`)  
   Exposes RESTful endpoints for Products, Orders, Account, Admin, Vendor dashboards, etc.
 
@@ -100,7 +100,86 @@ Mohamed Adel Sayed Madbouly – +20 111 564 0508
 
 Mohamed Mohamed Abd Elaziz – +20 101 067 5373
 
-📷 Screenshots
+## 📷 Screenshots
+
+### Home Page
+![Home Page](docs/images/Home.png)
+
+### 🔑 Authentication
+- **Register**
+  ![Register](docs/images/Register.png)
+
+- **Login**
+  ![Login](docs/images/login.png)
+
+---
+
+### 🛒 Shopping & Checkout
+- **Cart Page**
+  ![Cart](docs/images/cart%20page.png)
+
+- **Product Details**
+  ![Product Details](docs/images/product-details.png)
+
+- **Checkout - Address**
+  ![Checkout Address](docs/images/checkout%20address.png)
+
+- **Checkout - Shipping**
+  ![Checkout Shipping](docs/images/checkout%20shipping.png)
+
+- **Checkout - Payment**
+  ![Checkout Payment](docs/images/checkout%20payment.png)
+
+- **Checkout - Confirmation**
+  ![Checkout Confirmation](docs/images/checkout%20confirmation.png)
+
+- **Checkout - Receipt**
+  ![Checkout Receipt](docs/images/checkout%20receipt.png)
+
+---
+
+### 👤 User Features
+- **User Orders**
+  ![User Orders](docs/images/user%20orders%20page.png)
+
+- **Contact Us**
+  ![Contact Us](docs/images/contact-us%20page.png)
+
+---
+
+### 🏪 Vendor Features
+- **Vendor Dashboard (1)**
+  ![Vendor Dashboard 1](docs/images/vendor%20dashboard%201.png)
+
+- **Vendor Dashboard (2)**
+  ![Vendor Dashboard 2](docs/images/vendor%20dashboard%202.png)
+
+- **Vendor - My Products**
+  ![Vendor My Products](docs/images/vendor%20my%20products.png)
+
+- **Vendor - Add Product**
+  ![Vendor Add Product](docs/images/vendor%20add%20product.png)
+
+---
+
+### 🛠️ Admin Features
+- **Admin Dashboard (1)**
+  ![Admin Dashboard 1](docs/images/admin%20dashboard%201.png)
+
+- **Admin Dashboard (2)**
+  ![Admin Dashboard 2](docs/images/admin%20dashboard%202.png)
+
+- **Admin - Product Management**
+  ![Admin Product Management](docs/images/admin%20product%20management.png)
+
+- **Admin - Order Management**
+  ![Admin Order Management](docs/images/admin%20order%20management.png)
+
+- **Admin - Vendor Management**
+  ![Admin Managing Vendors](docs/images/admin%20managing%20vendors.png)
+
+- **Admin - Add Product as Vendor**
+  ![Admin Add Product as Vendor](docs/images/admin%20add%20product%20as%20vendor.png)
 
 📌 Credits
 
